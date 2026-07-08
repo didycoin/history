@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Study Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<nav>
+
+<div class="logo">
+📚 History Hub
+</div>
+
+<div class="navButtons">
+
+<button class="nav active" data-page="dashboard">
+Dashboard
+</button>
+
+<button class="nav" data-page="calendar">
+Study Plan
+</button>
+
+<button class="nav" data-page="flashcards">
+Flashcards
+</button>
+
+<button class="nav" data-page="timer">
+Pomodoro
+</button>
+
+<button class="nav" data-page="achievements">
+Achievements
+</button>
+
+</div>
+
+</nav>
+
+<div class="container">
+
+<section id="dashboard" class="page active">
+
+<h1>History Holiday Study</h1>
+
+<p class="subtitle">
+Build the basics over the holidays.
+Master it during Term 3.
+</p>
+
+<div class="statsGrid">
+
+<div class="card stat">
+
+<h3>Level</h3>
+
+<div id="level">
+1
+</div>
+
+</div>
+
+<div class="card stat">
+
+<h3>XP</h3>
+
+<div id="xp">
+0 / 1000
+</div>
+
+</div>
+
+<div class="card stat">
+
+<h3>Study Sessions</h3>
+
+<div id="sessions">
+0 / 8
+</div>
+
+</div>
+
+<div class="card stat">
+
+<h3>Exam Readiness</h3>
+
+<div id="readiness">
+0%
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Overall Progress</h2>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<p id="progressText">
+
+0%
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Current Goal</h2>
+
+<p id="goalText">
+
+Complete your first study session.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="calendar" class="page">
+
+<h1>Holiday Schedule</h1>
+
+<div id="studyCalendar"></div>
+
+</section>
+
+<section id="flashcards" class="page">
+
+<h1>Flashcards</h1>
+
+<div id="flashcardArea"></div>
+
+</section>
+
+<section id="timer" class="page">
+
+<h1>Pomodoro Timer</h1>
+
+<div class="timerCard">
+
+<div id="timerDisplay">
+
+25:00
+
+</div>
+
+<div class="timerButtons">
+
+<button id="startBtn">
+Start
+</button>
+
+<button id="pauseBtn">
+Pause
+</button>
+
+<button id="resetBtn">
+Reset
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="achievements" class="page">
+
+<h1>Achievements</h1>
+
+<div class="achievementGrid">
+
+<div class="achievement locked" id="a1">
+🥇 First Session
+</div>
+
+<div class="achievement locked" id="a2">
+🔥 3 Session Streak
+</div>
+
+<div class="achievement locked" id="a3">
+📖 Rights & Freedoms
+</div>
+
+<div class="achievement locked" id="a4">
+⚔ Gallipoli Expert
+</div>
+
+<div class="achievement locked" id="a5">
+🏆 Holiday Complete
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<div id="toast">
+
+Achievement Unlocked!
+
+</div>
+
+<audio id="completeSound">
+<source src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
