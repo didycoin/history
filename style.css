@@ -1,0 +1,391 @@
+:root{
+    --bg:#07111f;
+    --card:rgba(255,255,255,.08);
+    --cardBorder:rgba(255,255,255,.12);
+    --accent:#4cc9f0;
+    --accent2:#7b2ff7;
+    --green:#38ef7d;
+    --text:#f3f6ff;
+    --muted:#9aa8bc;
+    --shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top left,#223b6b 0%,transparent 40%),
+    radial-gradient(circle at bottom right,#3a1160 0%,transparent 35%),
+    linear-gradient(135deg,#09131f,#101c33,#09131f);
+    overflow-x:hidden;
+}
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 45px;
+    backdrop-filter:blur(18px);
+    background:rgba(0,0,0,.15);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.navButtons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.nav{
+    border:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:12px;
+    background:rgba(255,255,255,.06);
+    cursor:pointer;
+    transition:.25s;
+    font-weight:600;
+}
+
+.nav:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.15);
+}
+
+.nav.active{
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+    padding:40px;
+}
+
+.page{
+    display:none;
+    animation:fade .4s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+    font-size:52px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:var(--muted);
+    margin-bottom:35px;
+    font-size:18px;
+}
+
+.statsGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--cardBorder);
+    border-radius:22px;
+    padding:25px;
+    backdrop-filter:blur(18px);
+    box-shadow:var(--shadow);
+    margin-bottom:25px;
+}
+
+.card h2{
+    margin-bottom:20px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h3{
+    color:var(--muted);
+    margin-bottom:15px;
+}
+
+.stat div{
+    font-size:38px;
+    font-weight:800;
+}
+
+.progress{
+    width:100%;
+    height:18px;
+    background:rgba(255,255,255,.08);
+    border-radius:999px;
+    overflow:hidden;
+}
+
+#progressBar{
+    width:0%;
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(90deg,var(--green),var(--accent));
+    transition:.5s;
+}
+
+#progressText{
+    text-align:center;
+    margin-top:15px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.sessionCard{
+    background:var(--card);
+    border:1px solid var(--cardBorder);
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:18px;
+    transition:.25s;
+}
+
+.sessionCard:hover{
+    transform:translateY(-5px);
+}
+
+.sessionHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.sessionTasks{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sessionTasks label{
+    cursor:pointer;
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+input[type=checkbox]{
+    transform:scale(1.2);
+    accent-color:#42e695;
+}
+
+.timerCard{
+    width:420px;
+    max-width:100%;
+    margin:auto;
+    padding:45px;
+    border-radius:25px;
+    background:var(--card);
+    text-align:center;
+    border:1px solid var(--cardBorder);
+}
+
+#timerDisplay{
+    font-size:72px;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.timerButtons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.timerButtons button{
+    border:none;
+    padding:14px 22px;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    transition:.25s;
+    font-weight:bold;
+}
+
+.timerButtons button:hover{
+    transform:scale(1.05);
+}
+
+.achievementGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.achievement{
+    background:var(--card);
+    border-radius:18px;
+    border:1px solid var(--cardBorder);
+    padding:25px;
+    text-align:center;
+    font-size:20px;
+    transition:.25s;
+}
+
+.achievement.unlocked{
+    background:linear-gradient(135deg,#11998e,#38ef7d);
+    color:white;
+}
+
+.achievement.locked{
+    opacity:.45;
+}
+
+#toast{
+    position:fixed;
+    bottom:35px;
+    right:35px;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.1);
+    padding:18px 25px;
+    border-radius:15px;
+    transform:translateY(120px);
+    transition:.4s;
+    box-shadow:var(--shadow);
+}
+
+#toast.show{
+    transform:translateY(0);
+}
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3f6bff;
+    border-radius:100px;
+}
+
+@media(max-width:900px){
+
+nav{
+    padding:20px;
+    flex-direction:column;
+    gap:18px;
+}
+
+.container{
+    padding:20px;
+}
+
+h1{
+    font-size:36px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+}
+.flashcard{
+
+width:280px;
+height:180px;
+perspective:1000px;
+cursor:pointer;
+display:inline-block;
+margin:15px;
+
+}
+
+.flashInner{
+
+width:100%;
+height:100%;
+position:relative;
+transition:.6s;
+transform-style:preserve-3d;
+
+}
+
+.flashcard.flip .flashInner{
+
+transform:rotateY(180deg);
+
+}
+
+.flashFront,
+.flashBack{
+
+position:absolute;
+width:100%;
+height:100%;
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+text-align:center;
+backface-visibility:hidden;
+font-size:20px;
+font-weight:700;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.flashBack{
+
+transform:rotateY(180deg);
+background:linear-gradient(135deg,#4cc9f0,#7b2ff7);
+
+}
+
+#flashcardArea{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+
+}
